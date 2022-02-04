@@ -2,5 +2,6 @@
 FROM python:3.8-slim-buster
 WORKDIR /HN_top50
 RUN pip3 install flask requests
+RUN mkdir ./logs 
 COPY main.py .
 CMD ["python3", "main.py"]

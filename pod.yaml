@@ -3,12 +3,12 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: pu
-  name: pu
+    app: hn-flask
+  name: hn-flask
 spec:
   containers:
   - image: 551955/flask_hackernews:hn-flask
-    name: pu
+    name: hn-flask
     volumeMounts:
      - name: logs
        mountPath: /HN_top50/logs
