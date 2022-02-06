@@ -45,8 +45,6 @@ kubectl create ns prometheus
 helm install prometheus prometheus-community/kube-prometheus-stack --namespace prometheus
 ```
 
-> NB: log in to docker registry is required
-
 ## Deploy application and enable monitoring
 
 1. Run `kube.sh` to deploy application
