@@ -14,6 +14,7 @@ Dashboard consists of 3 panels:
 3) (Test) Response time for the last request
 > Note: Third panel will show only the last request latency, so it might not be handy if the number of requests in the scraping interval is more than 1.
 
+The following guide also includes prometheus-operator installation. It is an optional step and can be skipped if you already have Prometheus/Grafana installed.
 
 ## Prerequisites
 
