@@ -19,7 +19,7 @@ Dashboard consists of 3 panels:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) version v1.22.3+
 - Access to a [kubernetes cluster](https://kubernetes.io/releases/download/) version v1.23.1+
-- [Helm](https://helm.sh/docs/intro/install/) version v3.8.0
+- [Helm](https://helm.sh/docs/intro/install/) version v3.8.0+
 
 
 ## Deploy Prometheus and Grafana (optional)
