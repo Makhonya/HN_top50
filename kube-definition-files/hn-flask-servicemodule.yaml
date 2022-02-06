@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-hn-flask
+  labels:
+    app: hn-flask
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: hn-flask
+  endpoints:
+  - port: web
+  

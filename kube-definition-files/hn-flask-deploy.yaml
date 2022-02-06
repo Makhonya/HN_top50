@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hn-flask
+  labels:
+    app: hn-flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hn-flask
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hn-flask
+      name: hn-flask
+    spec:
+      containers:
+      - image: 551955/flask_hackernews:hn-flask2.3
+        name: hn-flask
+        securityContext:
+          privileged: true
+        volumeMounts:
+         - name: logs
+           mountPath: /HN_top50/logs
+        resources: {}
+      volumes:
+      - name: logs
+        emptyDir: {}
+         

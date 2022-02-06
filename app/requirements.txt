@@ -1,0 +1,5 @@
+flask==2.0.2
+requests==2.25.1
+requests_cache==0.9.1
+waitress==2.0.0
+prometheus_flask_exporter==0.18.7
