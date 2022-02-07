@@ -55,13 +55,26 @@ bash kube.sh
 ```
 > Note: the script also exposes the application as a NodePort service and creates a servicemonitor if prometheus-operator exists
 
-2. Enable proxy for grafana pod to access it from the local PC (default port 3000)
+2. Wait for pods to start. You should be able to see all pods in a running state:
+
+```
+HN_top50 git:(main) ✗ kubectl get po -n prometheus
+NAME                                                     READY   STATUS    RESTARTS   AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0   2/2     Running   0          2m5s
+prometheus-grafana-99544fc67-xdw8q                       3/3     Running   0          2m22s
+prometheus-kube-prometheus-operator-547b69cf7f-xg92h     1/1     Running   0          2m22s
+prometheus-kube-state-metrics-64df7c8675-9z2p9           1/1     Running   0          2m22s
+prometheus-prometheus-kube-prometheus-prometheus-0       2/2     Running   0          2m4s
+prometheus-prometheus-node-exporter-d2b55                1/1     Running   0          2m22s
+```
+
+3. Enable proxy for grafana pod to access it from the local PC (default port 3000)
 
 ```
 kubectl -n prometheus port-forward $(kubectl -n prometheus get pods  --selector=app.kubernetes.io/name=grafana  --output=jsonpath="{.items..metadata.name}")  3000
 ```
 
-3. Login to Grafana and import `grafana.json` as a dashboard
+4. Login to Grafana and import `grafana.json` as a dashboard
 > Default credentials: admin / prom-operator
 
 
